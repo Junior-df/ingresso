@@ -21,24 +21,17 @@ function comprar(){
         restoPista = qtdPista - qtde.value;
         qtdPista = document.getElementById('qtd-pista').value = restoPista;
         document.getElementById('qtd-pista').innerHTML = `<span id="qtd-pista">${qtdPista}</span>`;
-     }
-    if (qtdSuperior > 0 && tipoIngressos.value == "superior"){
+     } else if (qtdSuperior > 0 && tipoIngressos.value == "superior"){
         restoSuperior = qtdSuperior - qtde.value;
         qtdSuperior = document.getElementById('qtd-superior').value = restoSuperior;
         document.getElementById('qtd-superior').innerHTML = `<span id="qtd-superior">${qtdSuperior}</span>`;
-     }
-     if (qtdInferior > 0 && tipoIngressos.value == "inferior"){
+     } else  if (qtdInferior > 0 && tipoIngressos.value == "inferior"){
         restoInferior = qtdInferior - qtde.value;
         qtdInferior = document.getElementById('qtd-inferior').value = restoInferior;
         document.getElementById('qtd-inferior').innerHTML = `<span id="qtd-inferior">${qtdInferior}</span>`;
+     } else {
+        alert(`Quantidade indisponível para ${tipoIngressos.value}`);
      }
-    
-        
-   
-    //alert(tipoIngressos.value);
-    //alert(qtde.value);
-    //alert(qtdPista);  
-    //alert(valorPista);
-    
 
 }
+

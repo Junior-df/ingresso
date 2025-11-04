@@ -8,15 +8,14 @@ let qtdPista    =  document.getElementById("qtd-pista").innerHTML.valueOf();
 let qtdSuperior =  document.getElementById("qtd-superior").innerHTML.valueOf();
 let qtdInferior =  document.getElementById("qtd-inferior").innerHTML.valueOf();
 
-//<li>Cadeira superior<span id="qtd-superior">200</span></li>
-//                <li>Cadeira inferior<span id="qtd-inferior">400</span></li>
 
 function comprar(){
     
-    let tipoIngressos = document.getElementById('tipo-ingresso');
+    let tipoIngressos = document.getElementById('tipo-ingresso')
     let qtde = document.getElementById('qtd');
+    
   
-
+   if (qtde.value > 0){
     if (qtdPista > 0 && tipoIngressos.value == "pista"){
         restoPista = qtdPista - qtde.value;
         qtdPista = document.getElementById('qtd-pista').value = restoPista;
@@ -32,6 +31,9 @@ function comprar(){
      } else {
         alert(`Quantidade indisponível para ${tipoIngressos.value}`);
      }
+   } else{
+        alert('o número não pode ser negativo');
+   } 
 
 }
 
